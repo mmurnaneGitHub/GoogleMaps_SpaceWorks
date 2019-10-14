@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+    
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7,IE=9,IE=10">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />--> 
+    
+    <title>SpaceWork Locations - Matching artists & entrepreneurs with vacant spaces to activate Tacoma </title> 
+    <link rel="shortcut icon" href="shortcut.ico">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
+    <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojox/image/resources/Lightbox.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojox/layout/resources/ExpandoPane.css" media="screen">
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dijit/themes/tundra/tundra.css" media="screen">
+
+    <!--Dojo-->
+		<script src="https://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js"></script>
+    <!--Google Maps-->
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPoaOE5Rhl1zF-w8kXaJ0taaDSvdi1L44" type="text/javascript"></script>
+    <!--Additional SpaceWorks js -->
+    <script type="text/javascript" src="js/SpaceWorksMap.js"></script>
+
+		<!-- MJM Click Tests -->
+    <script type="text/javascript" src="ClickTests/ClickTests.js"></script>
+
+  </head>
+    
+<body class="tundra"> 
+		  <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'sidebar', gutters:true, liveSplitters:false" id="borderContainer">
+
+        <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:false, region:'center'" id="theMap">
+          <div id="map_canvas"><!--MAP--></div>
+        </div>
+
+      <div id="myExpando" data-dojo-type="dojox/layout/ExpandoPane" data-dojo-props="title: 'Create Itinerary', maxWidth:295, splitter:false, region:'right', startExpanded:false">
+        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:false, region:'right'" id="rightPane">
+  				<div dojoType="dijit/layout/TabContainer" attachParent="true" tabPosition="top" tabStrip="true" id="rightTabs">
+
+  					<!--Studios ................................................. -->
+  					<div dojoType="dijit/layout/ContentPane" title="SpaceWork Sites" attachParent="true" id="StudiosTab">
+  					 <div id="Studios1"><!--Studios...thumbnails here...--></div>
+  					</div>
+
+  					<div dojoType="dijit/layout/ContentPane" title="Itinerary" id="ItineraryTab"  attachParent="true">
+                
+            		<div id="theItinerary1"><!--Instructions--></div>
+
+            		<div id="theItinerary2"><!--<i>No Studios selected.</i>--></div>
+                
+                <div id="theItinerary3">
+                   <i>Last Studio becomes final destination.<br>Optional: Drag Studios into desired order.</i><br>
+                   <button id="buttonDelete" type="button"></button>
+                   <button id="buttonRemove" type="button"></button>
+                   <br>&nbsp;
+                </div>
+
+                <div id="theItinerary4">
+                   <center><input type="radio" id="optimize" name="optimize"/> Optimize
+                   <input type="radio" id="currentOrder" name="optimize" CHECKED /> Use current order
+                   <br><button id="buttonDirections" type="button"></button></center>
+                </div>
+
+  					</div>
+  
+  					<!--Directions ................................................. -->
+  					<div dojoType="dijit/layout/ContentPane" title="Directions" attachParent="true" id="DirectionsTab">
+  					 <div id="directions1"><!--Print Directions--></div>
+  					 <div id="directions2"><!--<a href="javascript:togglePane('rightPane','rightTabs','ItineraryTab');">Modify Itinerary</a>--></div>
+             <br>&nbsp;
+             <div id="directionsPanel"><!--Google directions--></div>
+  					</div>
+  
+  				</div> <!--rightTabs-->
+   			 </div> <!--rightPane-->
+        </div> <!--expando-->
+
+    </div> <!--container-->
+
+		<!--Welcome Popup-->
+        <div id="mapWelcome" dojoType="dijit/Dialog" title="SpaceWorks Map" style="text-align:center;">
+          <div  style="text-align:center; max-width: 400px; overflow: auto;">
+            View storefronts in Tacoma filled with art and creative enterprise. <p> Click on any map marker or artwork image to find detailed information. Plot a custom tour course using the Itinerary function.</p>
+           
+             <p><button dojoType="dijit/form/Button" type="button" onClick="dijit.byId('mapWelcome').hide();dijit.byId('myExpando').toggle();">Begin</button></p>
+
+            <b>Feedback/Comments:</b> <br>We appreciate any input on improving this site. Please e-mail <a href="mailto:nstrom-avila@cityoftacoma.org?subject=SpaceWorks Map">us</a>
+          </div>              
+        </div>
+			
+</body>
+
+</html>
